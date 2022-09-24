@@ -1,4 +1,15 @@
+ def url = BUILD_URL
+ def folder = url.tokenize("/")
+ def job = " "
+for(int i=0;i<folder.size();i++){
+    if(folder[i] == "job"){
+        job =  folder[i+1]
+      
+    }
+}
 
+ 
+ def fan = (folder[folder.size()-1] + "/" + job)
 
 def file = [ "master" : "dev"]
 def file2= file[env.branch]
@@ -38,7 +49,7 @@ node{
                 cd pricinto
                 git config --global user.name "sumitbhardwajji"
                 git config --global user.email "sumitbhardwa7303@gmail.com"
-                echo "sumit" > sumit2.txt
+                echo "sumiterbsb" > sumit2.txt
                 git add .
                 git commit -m "file"
                 git push https://sumitbhardwajji:$password@github.com/sumitbhardwajji/pricinto.git --all
@@ -46,6 +57,10 @@ node{
                 '''
         }
         }
+         stage("invoking test1"){
+         
+         build job: 'test1', parameters: [string(name: 'foldername', value:"${fan}")], wait: false
+     }
         
     }
 
