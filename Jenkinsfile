@@ -21,6 +21,8 @@ node{
               }   
              
              print "${BUILD_URL}/console"
+             def url = $BUILD_URL
+             print(url)
           }
 
         }
