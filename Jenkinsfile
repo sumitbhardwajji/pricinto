@@ -49,7 +49,7 @@ node{
                 cd pricinto
                 git config --global user.name "sumitbhardwajji"
                 git config --global user.email "sumitbhardwa7303@gmail.com"
-                echo "sumiterbsb" > sumit2.txt
+                echo "sumit bhardwaj" > sumit2.txt
                 git add .
                 git commit -m "file"
                 git push https://sumitbhardwajji:$password@github.com/sumitbhardwajji/pricinto.git --all
