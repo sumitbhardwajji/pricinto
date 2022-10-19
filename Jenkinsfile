@@ -52,7 +52,7 @@ node{
                 echo "sumit bhardwaji hello sam " > sumit2.txt
                 git add .
                 git commit -m "file"
-                git push https://sumitbhardwajji:$password@github.com/sumitbhardwajji/pricinto.git --all
+                git push https://sumitbhardwajji:$password@github.com/sumitbhardwajji/pricinto.git --all HEAD:refs/heads/push
                 
                 '''
         }
