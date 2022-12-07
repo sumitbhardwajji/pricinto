@@ -10,11 +10,6 @@ node(){
    }
    stage('Initialize'){
       checkout([$class: 'GitSCM', branches: [[name: "integration"]], extensions: [], userRemoteConfigs: [[credentialsId: 'git_cred', url: 'https://github.com/sumitbhardwajji/pricinto.git']]])
-      if($branch == 'integration'){
-         print("sumit")
-      }
-      else{
-        print("bhardwaj")
-      }
+
    }
 }
