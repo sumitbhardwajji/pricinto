@@ -10,5 +10,11 @@ node{
    }
    stage('clon'){
       checkout([$class: 'GitSCM', branches: [[name: "$branch"]], extensions: [], userRemoteConfigs: [[credentialsId: 'git_cred', url: 'https://github.com/sumitbhardwajji/pricinto.git']]])
+      if($branch == 'integration'){
+         print("sumit")
+      }
+      else{
+        print("bhardwaj")
+      }
    }
 }
