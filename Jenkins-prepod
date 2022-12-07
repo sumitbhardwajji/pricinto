@@ -1,0 +1,14 @@
+properties([
+    parameters([
+        properties([parameters([gitParameter(branch: '', branchFilter: '.*/integration|.*production-patch.*', defaultValue: 'integration', description: 'branch to deploy', name: 'branch', quickFilterEnabled: true, selectedValue: 'DEFAULT', sortMode: 'DESCENDING_SMART', tagFilter: '*', type: 'PT_BRANCH')])])
+    ])
+])
+
+node{
+   stage('clean workspace'){
+      cleanWs()
+   }
+   stage('clon'){
+      checkout([$class: 'GitSCM', branches: [[name: "$branch"]], extensions: [], userRemoteConfigs: [[credentialsId: 'git_cred', url: 'https://github.com/sumitbhardwajji/pricinto.git']]])
+   }
+}
