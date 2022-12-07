@@ -8,8 +8,8 @@ node{
    stage('clean workspace'){
       cleanWs()
    }
-   stage('clon'){
-      checkout([$class: 'GitSCM', branches: [[name: '$branch']], extensions: [], userRemoteConfigs: [[credentialsId: 'git_cred', url: 'https://github.com/sumitbhardwajji/pricinto.git']]])
+   stage('Initialize'){
+      checkout([$class: 'GitSCM', branches: [[name: "$branch"]], extensions: [], userRemoteConfigs: [[credentialsId: 'git_cred', url: 'https://github.com/sumitbhardwajji/pricinto.git']]])
       if($branch == 'integration'){
          print("sumit")
       }
