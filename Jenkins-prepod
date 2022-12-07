@@ -1,6 +1,6 @@
 properties([
     parameters([
-        properties([parameters([gitParameter(branch: '', branchFilter: '.*/integration|.*production-patch.*', defaultValue: 'integration', description: 'branch to deploy', name: 'branch', quickFilterEnabled: true, selectedValue: 'DEFAULT', sortMode: 'DESCENDING_SMART', tagFilter: '*', type: 'PT_BRANCH')])])
+       gitParameter(branch: '', branchFilter: '.*/integration|.*production-patch.*', defaultValue: 'integration', description: 'branch to deploy', name: 'branch', quickFilterEnabled: true, selectedValue: 'DEFAULT', sortMode: 'DESCENDING_SMART', tagFilter: '*', type: 'PT_BRANCH')
     ])
 ])
 
